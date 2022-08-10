@@ -16,49 +16,58 @@ void vowelConsonant(string str)
     }
 }
 
+bool isVowel(char c)
+{
+    if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' ||
+                c=='A' || c=='E' || c=='I' || c=='O' || c=='U') return true;
+    return false;
+}
+
+bool isConsonant(char c)
+{
+    if((c>='a' && c<='z') || (c>='A' && c<='Z')) return true;
+    return false;
+}
+
 void solveC(string str)
 {
-    char word_cons[500];
-    char word_vow[500];
-    int ci=0, vi=0, indic = 0;
-    for(int i=0; i<str.length(); i++)
+    char vow[1000], cons[1000];
+    int vi = 0, ci = 0;
+    for(int i=0; i<str.size();)
     {
-        if(str[i]==' ')
-            continue;
+        if(isVowel(str[i]))
+        {
+            int j = i;
+            while(str[j]!=' ' && j<str.size())
+            {
+                vow[vi] = str[j];
+                vi++, j++;
+            }
+            i = j;
+            vow[vi++] = ' ';
+        }
+        else if(isConsonant(str[i]))
+        {
+            int j = i;
+            while(str[j]!=' ' && j<str.size())
+            {
+                cons[ci] = str[j];
+                ci++, j++;
+            }
+            i = j;
+            cons[ci++] = ' ';
+        }
         else
         {
-            if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' ||
-                    str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U')
-            {
-                indic = i;
-                while(str[i]!=' ')
-                {
-                    word_vow[vi] = str[indic];
-                    vi++;
-                    i++;
-                }
-                word_vow[vi] = ' ';
-                vi++;
-            }
-            else if ((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z'))
-            {
-                indic = i;
-                while(str[i]!=' ')
-                {
-                    word_cons[ci] = str[indic];
-                    ci++;
-                    i++;
-                }
-                word_cons[ci] = ' ';
-                ci++;
-            }
-        }
+            i++;
+        };
+
+        vow[vi] = '\0';
+        cons[ci] = '\0';
     }
-    for(int i=0; i<ci-1; i++)
-    {
-        cout << word_cons[ci];
-    }
-    cout << endl;
+    
+    printf("Vowel string => %s\n", vow);
+    printf("Consonant string => %s\n", cons);
 }
 
 int main()
@@ -82,7 +91,7 @@ int main()
     cout << "Consonants : ";
     for(itr=cons.begin(); itr!=cons.end(); itr++)
         cout << *itr << " ";
-    cout << endl;
+    cout << endl << endl;
 
 
     cout << "(c)" << endl;

@@ -30,7 +30,8 @@ int main()
     getline(cin, str);
     //cin >> str;
     int wordNumber = countWordNumber(str);
-    cout << wordNumber << endl;
+    cout<<"Number of Word : ";
+    cout << wordNumber << endl << endl;
     cout << "Number of Letters " << letters.size() << endl;
     cout << "Letters: ";
     for(int i=0; i<letters.size(); i++) cout << letters[i] << " ";
