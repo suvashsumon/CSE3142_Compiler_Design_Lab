@@ -7,7 +7,6 @@ bool isFloatVariable(string str)
     if(str.size()==0) return flag;
     if((str[0]>='a' && str[0]<='h') || (str[0]>='A' && str[0]<='H') || (str[0]>='o' && str[0]<='z') || (str[0]>='O' && str[0]<='Z')) flag = true;
     else return flag;
-    cout << "i am here" << endl;
     for(int i=1; i<str.size(); i++)
     {
         if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z') || (str[i]>='0' && str[i]<='9')) flag = true;
