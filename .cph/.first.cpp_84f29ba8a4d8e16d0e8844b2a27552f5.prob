@@ -1,0 +1,1 @@
+{"name":"Local: first","url":"/home/suvashkumar/Desktop/Compiler Lab/first.cpp","tests":[{"id":1668613146324,"input":"9\nS->E\nE->TR\nR->+TR\nR->#\nT->FY\nY->*FY\nY->#\nF->(E)\nF->i","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/suvashkumar/Desktop/Compiler Lab/first.cpp","group":"local","local":true}
