@@ -1,0 +1,1 @@
+{"name":"Local: program","url":"/home/suvashkumar/Desktop/Compiler Lab/Task 12/program.cpp","tests":[{"id":1668604383847,"input":"2+3*5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/suvashkumar/Desktop/Compiler Lab/Task 12/program.cpp","group":"local","local":true}
